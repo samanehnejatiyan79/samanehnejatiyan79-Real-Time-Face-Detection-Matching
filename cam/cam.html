@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Detection</title>
+    <script src="./face-api.min.js"></script>
+    <script defer src="./cam.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+        #video-container {
+            position: relative;
+            display: inline-block;
+            margin: 20px auto;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        video {
+            width: 640px;
+            height: 480px;
+            border-radius: 10px;
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .controls {
+            margin: 20px 0;
+        }
+        button, input {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Real-Time Face Detection & Matching</h1>
+    <div id="video-container">
+        <video id="video" autoplay muted playsinline></video>
+    </div>
+    <div class="controls">
+        <input type="file" id="reference-upload" accept="image/*">
+        <button id="snap-btn">Take Snapshot</button>
+    </div>
+</body>
+</html>
